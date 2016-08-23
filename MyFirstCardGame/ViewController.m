@@ -13,6 +13,11 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *cardLabel;
+@property (strong, nonatomic) IBOutlet UILabel *topLeftLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bottomLeftLabel;
+@property (strong, nonatomic) IBOutlet UILabel *topRightLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bottomRightLabel;
+
 @property Deck* deck;
 
 @end
@@ -22,8 +27,6 @@
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
   self = [super initWithCoder:aDecoder];
   if (self) {
-    // Initialize your game or deck here.
-    
      _deck = [[Deck alloc] init];
   }
   return self;
@@ -31,7 +34,13 @@
 
 - (IBAction)shuffleCards:(id)sender {
     [self.deck shuffle];
-    self.cardLabel.text = [[self.deck topCard] label];
+    Card *card = [self.deck topCard];
+    self.cardLabel.text = [card label];
+    NSString *suit = [card suit];
+    self.topLeftLabel.text = suit;
+    self.bottomLeftLabel.text = suit;
+    self.topRightLabel.text = suit;
+    self.bottomRightLabel.text = suit;    
 }
 
 
