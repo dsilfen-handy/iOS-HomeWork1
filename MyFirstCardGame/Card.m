@@ -21,8 +21,8 @@
 }
 
 - (NSString *)label {
-    NSString *formattedLabel = @"%@ / %@";
-    return [NSString stringWithFormat:formattedLabel, self.suit, self.value];
+    NSString *formattedLabel = @"%@ of %@";
+    return [NSString stringWithFormat:formattedLabel, self.value, self.suit];
 }
 
 @end

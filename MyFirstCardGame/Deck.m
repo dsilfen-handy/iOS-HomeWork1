@@ -44,7 +44,7 @@ static int NumberOfCards = 52;
 }
 
 -(NSMutableArray *)createCardsArray {
-    NSArray *suits = @[@"Hearts", @"Spades", @"Clubs", @"Diamonds"];
+    NSArray *suits = @[@"♥️", @"♣️", @"♠️", @"♦️"];
     NSArray *values = @[@"Ace", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"10", @"Jack", @"Queen", @"King"];
     NSMutableArray *internalCards = [[NSMutableArray alloc] init];
     for (NSString *suit in suits) {
